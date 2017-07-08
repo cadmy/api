@@ -30,7 +30,7 @@ public class MainController {
     @GetMapping("/getProfile")
     @ApiOperation(value = "Выводит данные о профиле")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "token", value = "token", required = false, dataType = "string", paramType = "header"),
+            @ApiImplicitParam(name = "token", value = "token", required = true, dataType = "string", paramType = "header"),
     })
     public Profile getProfile(@RequestParam int id) {
         return profileService.getProfileById(id);
